@@ -1,0 +1,267 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class GraficosControl extends CI_Controller {
+
+	function __construct(){	
+			parent::__construct();	
+			$this->load->model('GraficData_model');
+			//$this->load->library('PHPlot');
+			$this->load->library(array('PHPlot','session'));
+		} 
+	public function ShowGraf()
+	{
+		$this->load->view('v_mostrarGrafico');
+	}
+	
+	public function GraficoBarTot(){
+		// Dados de entrada
+		$equipJanEnt = $this->GraficData_model->getGrafNumRegJanEnt(); 
+		$equipFevEnt = $this->GraficData_model->getGrafNumRegFevEnt();
+		$equipMarEnt = $this->GraficData_model->getGrafNumRegMarEnt();
+		$equipAbrEnt = $this->GraficData_model->getGrafNumRegAbrEnt();
+		$equipMaiEnt = $this->GraficData_model->getGrafNumRegMaiEnt(); 
+		$equipJunEnt = $this->GraficData_model->getGrafNumRegJunEnt();
+		$equipJulEnt = $this->GraficData_model->getGrafNumRegJulEnt();
+		$equipAgoEnt = $this->GraficData_model->getGrafNumRegAgoEnt();
+		$equipSetEnt = $this->GraficData_model->getGrafNumRegSetEnt(); 
+		$equipOutEnt = $this->GraficData_model->getGrafNumRegOutEnt();
+		$equipNovEnt = $this->GraficData_model->getGrafNumRegNovEnt();	
+		$equipDezEnt = $this->GraficData_model->getGrafNumRegDezEnt();
+		// Dados de saida
+		$equipJanSai = $this->GraficData_model->getGrafNumRegJanSai(); 
+		$equipFevSai = $this->GraficData_model->getGrafNumRegFevSai();
+		$equipMarSai = $this->GraficData_model->getGrafNumRegMarSai();
+		$equipAbrSai = $this->GraficData_model->getGrafNumRegAbrSai();
+		$equipMaiSai = $this->GraficData_model->getGrafNumRegMaiSai(); 
+		$equipJunSai = $this->GraficData_model->getGrafNumRegJunSai();
+		$equipJulSai = $this->GraficData_model->getGrafNumRegJulSai();
+		$equipAgoSai = $this->GraficData_model->getGrafNumRegAgoSai();
+		$equipSetSai = $this->GraficData_model->getGrafNumRegSetSai(); 
+		$equipOutSai = $this->GraficData_model->getGrafNumRegOutSai();
+		$equipNovSai = $this->GraficData_model->getGrafNumRegNovSai();	
+		$equipDezSai = $this->GraficData_model->getGrafNumRegDezSai();
+				
+		$data = array(
+		  array('JAN', $equipJanEnt, $equipJanSai), array('FEV', $equipFevEnt, $equipFevSai),
+		  array('MAR', $equipMarEnt, $equipMarSai), array('ABR', $equipAbrEnt, $equipAbrSai),
+		  array('MAI', $equipMaiEnt, $equipMaiSai), array('JUN', $equipJunEnt, $equipJunSai),
+		  array('JUL', $equipJulEnt, $equipJulSai), array('AGO', $equipAgoEnt, $equipAgoSai),
+		  array('SET', $equipSetEnt, $equipSetSai), array('OUT', $equipOutEnt, $equipOutSai),
+		  array('NOV', $equipNovEnt, $equipNovSai), array('DEZ', $equipDezEnt, $equipDezSai),
+		);
+
+		$plot = new CI_PHPlot(860, 420);
+		$plot->SetImageBorderType('plain');
+		$plot->SetPlotType('bars');
+		$plot->SetDataType('text-data');
+		$plot->SetDataValues($data);
+		$plot->SetTitle("NUMERO DE EQUIPAMENTOS POR MES EM 2017");
+		$plot->SetShading(0);
+		$plot->SetDrawDashedGrid(true);
+
+		$plot->SetDataColors(array('#0171BC','#18BC9C'));  // (array('#18BC9C','#87CEEB'))
+		
+		# Make a legend for the 3 data sets plotted:
+		$plot->SetLegend(array('Entrada', 'Saida'));
+		
+		$plot->SetBackgroundColor('#F7F7F9');
+		$plot->SetTextColor('black');
+		//$plot->SetDataBorderColors('red');
+		$plot->SetLightGridColor('black'); // So grid stands out from background
+
+		# Turn off X tick labels and ticks because they don't apply here:
+		$plot->SetXTickLabelPos('none');
+		$plot->SetXTickPos('none');
+
+		# Make sure Y=0 is displayed:
+		$plot->SetPlotAreaWorld(NULL, 0);
+		# Y Tick marks are off, but Y Tick Increment also controls the Y grid lines:
+		$plot->SetYTickIncrement(25);
+
+		# Turn on Y data labels:
+		$plot->SetYDataLabelPos('plotin');
+
+		# With Y data labels, we don't need Y ticks or their labels, so turn them off.
+		$plot->SetYTickLabelPos('none');
+		$plot->SetYTickPos('none');
+
+		# Format the Y Data Labels as numbers with 1 decimal place.
+		# Note that this automatically calls SetYLabelType('data').
+		$plot->SetPrecisionY(0);
+
+		$graf = $plot->DrawGraph();
+		//$plot->PrintImage();
+		return $graf;
+		
+	}
+	public function GraficoPieTot(){
+		$sobreaquecimento = $this->GraficData_model->getGrafNumRegSobreaquecimento(); 
+		$faltaFase = $this->GraficData_model->getGrafNumRegFaltaFase();		
+		$contaminacao = $this->GraficData_model->getGrafNumRegContaminacao();
+		$baixaIsolacao = $this->GraficData_model->getGrafNumRegBaixaIsolacao();
+		$problemaMecanico = $this->GraficData_model->getGrafNumRegProblemaMecanico();
+		$revisao = $this->GraficData_model->getGrafNumRegRevisao();
+		$garantia = $this->GraficData_model->getGrafNumRegGarantia();
+		$outros = $this->GraficData_model->getGrafNumRegOutros(); 
+		
+		
+		$data = array(
+		 array('', $sobreaquecimento),
+		 array('', $faltaFase),
+		 array('', $contaminacao),
+		 array('', $baixaIsolacao),
+		 array('', $problemaMecanico),
+		 array('', $revisao),
+		 array('', $garantia),
+		 array('', $outros),	 
+		);
+		$plot = new CI_PHPlot(760, 710);
+		//$plot->SetTitle("PRINCIPAIS CAUSAS DE FALHAS");
+		$plot->SetImageBorderType('plain');
+		$plot->SetDataType('text-data-single');
+		$plot->SetDataValues($data);
+		$plot->SetPlotType('pie');
+		$plot->SetBackgroundColor('#F7F7F9');
+		$colors = array('red', 'green', 'blue', 'yellow', 'DarkGreen', 'orange','salmon','aquamarine1');
+		$plot->SetDataColors($colors);
+		$causas = array('Sobreaquecimento', 'Falta de fase', 'Contaminacao','Baixa isolacao','Problema mecanico', 'Revisao', 'Garantia', 'Outros');
+		$plot->SetLegend($causas);
+		$plot->SetShading(5);
+		$plot->SetLabelScalePosition(0.3);
+		$plot->DrawGraph();
+	}
+	
+	//++++++++++++++++Grafico para clientes  +++++++++++++++++++++++++++++++++
+	
+	public function ShowGrafClient()
+	{
+		$this->load->view('v_mostrarGraficoClient');
+	}
+	
+	public function GraficoBarTotClient(){
+		
+		$nomeCliente = $this->session->userdata('nome');
+		
+		// Dados de entrada
+		$equipJanEnt = $this->GraficData_model->getGrafNumRegClientJanEnt($nomeCliente); 
+		$equipFevEnt = $this->GraficData_model->getGrafNumRegClientFevEnt($nomeCliente);
+		$equipMarEnt = $this->GraficData_model->getGrafNumRegClientMarEnt($nomeCliente);
+		$equipAbrEnt = $this->GraficData_model->getGrafNumRegClientAbrEnt($nomeCliente);
+		$equipMaiEnt = $this->GraficData_model->getGrafNumRegClientMaiEnt($nomeCliente); 
+		$equipJunEnt = $this->GraficData_model->getGrafNumRegClientJunEnt($nomeCliente);
+		$equipJulEnt = $this->GraficData_model->getGrafNumRegClientJulEnt($nomeCliente);
+		$equipAgoEnt = $this->GraficData_model->getGrafNumRegClientAgoEnt($nomeCliente);
+		$equipSetEnt = $this->GraficData_model->getGrafNumRegClientSetEnt($nomeCliente); 
+		$equipOutEnt = $this->GraficData_model->getGrafNumRegClientOutEnt($nomeCliente);
+		$equipNovEnt = $this->GraficData_model->getGrafNumRegClientNovEnt($nomeCliente);	
+		$equipDezEnt = $this->GraficData_model->getGrafNumRegClientDezEnt($nomeCliente);
+		// Dados de saida
+		$equipJanSai = $this->GraficData_model->getGrafNumRegClientJanSai($nomeCliente); 
+		$equipFevSai = $this->GraficData_model->getGrafNumRegClientFevSai($nomeCliente);
+		$equipMarSai = $this->GraficData_model->getGrafNumRegClientMarSai($nomeCliente);
+		$equipAbrSai = $this->GraficData_model->getGrafNumRegClientAbrSai($nomeCliente);
+		$equipMaiSai = $this->GraficData_model->getGrafNumRegClientMaiSai($nomeCliente); 
+		$equipJunSai = $this->GraficData_model->getGrafNumRegClientJunSai($nomeCliente);
+		$equipJulSai = $this->GraficData_model->getGrafNumRegClientJulSai($nomeCliente);
+		$equipAgoSai = $this->GraficData_model->getGrafNumRegClientAgoSai($nomeCliente);
+		$equipSetSai = $this->GraficData_model->getGrafNumRegClientSetSai($nomeCliente); 
+		$equipOutSai = $this->GraficData_model->getGrafNumRegClientOutSai($nomeCliente);
+		$equipNovSai = $this->GraficData_model->getGrafNumRegClientNovSai($nomeCliente);	
+		$equipDezSai = $this->GraficData_model->getGrafNumRegClientDezSai($nomeCliente);
+				
+		$data = array(
+		  array('JAN', $equipJanEnt, $equipJanSai), array('FEV', $equipFevEnt, $equipFevSai),
+		  array('MAR', $equipMarEnt, $equipMarSai), array('ABR', $equipAbrEnt, $equipAbrSai),
+		  array('MAI', $equipMaiEnt, $equipMaiSai), array('JUN', $equipJunEnt, $equipJunSai),
+		  array('JUL', $equipJulEnt, $equipJulSai), array('AGO', $equipAgoEnt, $equipAgoSai),
+		  array('SET', $equipSetEnt, $equipSetSai), array('OUT', $equipOutEnt, $equipOutSai),
+		  array('NOV', $equipNovEnt, $equipNovSai), array('DEZ', $equipDezEnt, $equipDezSai),
+		);
+
+		$plot = new CI_PHPlot(860, 420);
+		$plot->SetImageBorderType('plain');
+		$plot->SetPlotType('bars');
+		$plot->SetDataType('text-data');
+		$plot->SetDataValues($data);
+		$plot->SetTitle("NUMERO DE EQUIPAMENTOS POR MES EM 2017");
+		$plot->SetShading(0);
+		$plot->SetDrawDashedGrid(true);
+
+		$plot->SetDataColors(array('#0171BC','#18BC9C'));  // (array('#18BC9C','#87CEEB'))
+		
+		# Make a legend for the 3 data sets plotted:
+		$plot->SetLegend(array('Entrada', 'Saida'));
+		
+		$plot->SetBackgroundColor('#F7F7F9');
+		$plot->SetTextColor('black');
+		//$plot->SetDataBorderColors('red');
+		$plot->SetLightGridColor('black'); // So grid stands out from background
+
+		# Turn off X tick labels and ticks because they don't apply here:
+		$plot->SetXTickLabelPos('none');
+		$plot->SetXTickPos('none');
+
+		# Make sure Y=0 is displayed:
+		$plot->SetPlotAreaWorld(NULL, 0);
+		# Y Tick marks are off, but Y Tick Increment also controls the Y grid lines:
+		$plot->SetYTickIncrement(10);
+
+		# Turn on Y data labels:
+		$plot->SetYDataLabelPos('plotin');
+
+		# With Y data labels, we don't need Y ticks or their labels, so turn them off.
+		$plot->SetYTickLabelPos('none');
+		$plot->SetYTickPos('none');
+
+		# Format the Y Data Labels as numbers with 1 decimal place.
+		# Note that this automatically calls SetYLabelType('data').
+		$plot->SetPrecisionY(0);
+
+		$graf = $plot->DrawGraph();
+		//$plot->PrintImage();
+		return $graf;
+		
+	}
+	public function GraficoPieTotClient(){
+		$nomeCliente = $this->session->userdata('nome');
+		
+		$sobreaquecimento = $this->GraficData_model->getGrafNumRegClientSobreaquecimento($nomeCliente); 
+		$faltaFase = $this->GraficData_model->getGrafNumRegClientFaltaFase($nomeCliente);		
+		$contaminacao = $this->GraficData_model->getGrafNumRegClientContaminacao($nomeCliente);
+		$baixaIsolacao = $this->GraficData_model->getGrafNumRegClientBaixaIsolacao($nomeCliente);
+		$problemaMecanico = $this->GraficData_model->getGrafNumRegClientProblemaMecanico($nomeCliente);
+		$revisao = $this->GraficData_model->getGrafNumRegClientRevisao($nomeCliente);
+		$garantia = $this->GraficData_model->getGrafNumRegClientGarantia($nomeCliente);
+		$outros = $this->GraficData_model->getGrafNumRegClientOutros($nomeCliente); 
+		
+		
+		$data = array(
+		 array('', $sobreaquecimento),
+		 array('', $faltaFase),
+		 array('', $contaminacao),
+		 array('', $baixaIsolacao),
+		 array('', $problemaMecanico),
+		 array('', $revisao),
+		 array('', $garantia),
+		 array('', $outros),	 
+		);
+	
+		$plot = new CI_PHPlot(760, 710);
+		//$plot->SetTitle("PRINCIPAIS CAUSAS DE FALHAS");
+		$plot->SetImageBorderType('plain');
+		$plot->SetDataType('text-data-single');
+		$plot->SetDataValues($data);
+		$plot->SetPlotType('pie');
+		$plot->SetBackgroundColor('#F7F7F9');
+		$colors = array('red', 'green', 'blue', 'yellow', 'DarkGreen', 'orange','salmon','aquamarine1');
+		$plot->SetDataColors($colors);
+		$causas = array('Sobreaquecimento', 'Falta de fase', 'Contaminacao','Baixa isolacao','Problema mecanico', 'Revisao', 'Garantia', 'Outros');
+		$plot->SetLegend($causas);
+		$plot->SetShading(5);
+		$plot->SetLabelScalePosition(0.3);
+		$plot->DrawGraph();
+	}
+	
+    //++++++++++++++++++++++++
+}
