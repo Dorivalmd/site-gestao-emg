@@ -14,6 +14,15 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 /vendor/
 
+#==============
+uploads/
+composer.json
+contributing.md
+error_log
+.htaccess-20181007015937
+index.php
+system/cache/ci_sessiondb7c8fc6df949d4a304fb84ad7ae69336b563bac
+
 # IDE Files
 #-------------------------
 /nbproject/
