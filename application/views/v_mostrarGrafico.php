@@ -11,45 +11,56 @@
 	?>
 	<div class="container">	
 		<!--  <h5>Usuário: <?=$this->session->userdata('nome')?></h5>  -->
-		<div class="row">
-			<!--<div class="panel panel-primary">-->
+		
+			<!-- <div class="panel panel-primary"> -->
+					
 				<div class="panel-body">
-					<div class="panel panel-success">
+					
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h1 align="center" class="panel-title">TOTAL DE EQUIPAMENTOS POR MÊS EM 2019</h1>
+						</div>
+						<div class="panel-body">	
+							<div class="row">
+								<fieldset class="col-md-12">
+									<p><img src="<?= base_url('GraficosControl/GraficoBar2019')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
+								</fieldset>								
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h1 align="center" class="panel-title">TOTAL DE EQUIPAMENTOS POR MÊS EM 2018</h1>
+						</div>
+						<div class="panel-body">	
+							<div class="row">
+								<fieldset class="col-md-12">
+									<p><img src="<?= base_url('GraficosControl/GraficoBar2018')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
+								</fieldset>								
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h1 align="center" class="panel-title">TOTAL DE EQUIPAMENTOS POR MÊS EM 2017</h1>
 						</div>
 						<div class="panel-body">	
 							<div class="row">
-								<fieldset class="col-md-3">
-									<div class="panel panel-success">
-										<div class="panel-body">
-											<dl>
-												<dt><font color="#18BC9C">Observações: </font></dt>
-												<br>
-												<dd>- Relaciona dados de entrada e saida de equipamentos por mês em 2017.</dd>
-												<br>
-												<dd>- O sistema foi implantado no final do mês de janeiro, e o gráfico apresenta sómente dados que foram registrados no banco de dados, portanto as informações de janeiro e  fevereiro estão incompletas.</dd>
-												<br>
-												<br>
-												<br>
-											</dl>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset class="col-md-9">
-									<p><img src="<?= base_url('GraficosControl/GraficoBarTot')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
+								<fieldset class="col-md-12">
+									<p><img src="<?= base_url('GraficosControl/GraficoBar2017')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
 								</fieldset>								
 							</div>
 						</div>
-					</div>					
-					<div class="panel panel-success">
+					</div>
+					<!--
+					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h1 align="center" class="panel-title">PRINCIPAIS CAUSAS DE FALHAS</h1>
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<fieldset class="col-md-5">
-									<div class="panel panel-success">
+									<div class="panel panel-info">
 										<div class="panel-body">
 											<dl>										
 												<dt><font color="#18BC9C">Sobreaquecimento</font></dt> 
@@ -88,60 +99,13 @@
 									<p><img src="<?= base_url('GraficosControl/GraficoPieTot')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
 								</fieldset>
 							</div>
-						</div>
-					</div>
-					<!--
-					<div class="panel panel-success">
-						<div class="panel-heading">
-							<h1 align="center" class="panel-title">Principais Causas de Falhas</h1>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-								<fieldset class="col-md-5">
-									<div class="panel panel-success">
-										<div class="panel-body">
-											<dl>
-												<dt>Observações:</dt>
-											
-												<dt> Sobreaquecimento </dt> 
-												<dd>- Excesso de carga na ponta de eixo;</dd>
-												<dd>- Sobretensão ou subtensão na rede de alimentação;</dd>
-												<dd>- Conexão incorreta dos cabos de ligação do motor.</dd>
-												
-												<dt>Falta de fase </dt> 
-												<dd>- Mau contato em chave, contator ou disjuntor;</dd>
-												<dd>- Mau contato em conexões;</dd>
-												<dd>- Queima de um fusível;</dd>
-												
-												<dt>Contaminação </dt>
-												<dd>- Presença de graxa, óleo, água ou outros líquidos nas bobinas.</dd>
-												
-												<dt>Baixa isolação </dt>
-												<dd>- Ressecamento do material isolante por tempo de vida útil ou sobreaquecimentos consecutivos;</dd>
-												<dd>- Umidade do ambiente.</dd>
-												
-												<dt>Problema mecanico </dt>
-												<dd>- Folga nas tampas ou eixo, eixo empenado, rolamento travado etc. </dd>
-												
-												<dt>Revisão </dt>
-												<dd>- Se nenhum problema é detectado é feita a manutenção preventiva do motor.</dd>
-											
-												<dt>Outros </dt>
-												<dd>- Qualquer problema fora dos padrões.</dd>
-											</dl>
-										</div>
-									</div>
-								</fieldset>
-								<fieldset class="col-md-7">
-									<p><img src="<?= base_url('GraficosControl/GraficoPieTotClientIncl')?>" class="img-thumbnail img-responsive"  alt="Grafico" >				 
-								</fieldset>
-							</div>
-						</div>						
+						</div>		
 					</div>
 					-->
-				</div>	
-			<!--</div>-->
+				</div>				
+			<!-- </div> -->
 		</div>
+	</div>	
 	
 </body>
 </html>

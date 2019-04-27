@@ -7,10 +7,10 @@
 		}
 		//+++++++++++++++++++++Numero de registros por mes/Entrada++++++++
 		
-		function getGrafNumRegJanEnt(){    //Janeiro
+		function getGrafNumRegJanEnt($ano){    //Janeiro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('01', '2017'));
+			$query = $this->db->query($sql, array('01', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -19,10 +19,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegFevEnt(){    //Fevereiro
+		function getGrafNumRegFevEnt($ano){    //Fevereiro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('02', '2017'));
+			$query = $this->db->query($sql, array('02', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -31,10 +31,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegMarEnt(){    //Março
+		function getGrafNumRegMarEnt($ano){    //Março
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('03', '2017'));
+			$query = $this->db->query($sql, array('03', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -43,10 +43,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegAbrEnt(){    //Abril
+		function getGrafNumRegAbrEnt($ano){    //Abril
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('04', '2017'));
+			$query = $this->db->query($sql, array('04', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -55,10 +55,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegMaiEnt(){    //Maio
+		function getGrafNumRegMaiEnt($ano){    //Maio
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('05', '2017'));
+			$query = $this->db->query($sql, array('05', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -67,10 +67,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegJunEnt(){    //Junho
+		function getGrafNumRegJunEnt($ano){    //Junho
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('06', '2017'));
+			$query = $this->db->query($sql, array('06', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -79,10 +79,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegJulEnt(){    //Julho
+		function getGrafNumRegJulEnt($ano){    //Julho
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('07', '2017'));
+			$query = $this->db->query($sql, array('07', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -91,10 +91,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegAgoEnt(){    //Agosto
+		function getGrafNumRegAgoEnt($ano){    //Agosto
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('08', '2017'));
+			$query = $this->db->query($sql, array('08', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -103,10 +103,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegSetEnt(){    //Setembro
+		function getGrafNumRegSetEnt($ano){    //Setembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('09', '2017'));
+			$query = $this->db->query($sql, array('09', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -115,10 +115,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegOutEnt(){    //Outubro
+		function getGrafNumRegOutEnt($ano){    //Outubro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('10', '2017'));
+			$query = $this->db->query($sql, array('10', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -127,10 +127,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegNovEnt(){    //Novembro
+		function getGrafNumRegNovEnt($ano){    //Novembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('11', '2017'));
+			$query = $this->db->query($sql, array('11', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -139,10 +139,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegDezEnt(){    //Dezembro
+		function getGrafNumRegDezEnt($ano){    //Dezembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array('12', '2017'));
+			$query = $this->db->query($sql, array('12', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -157,10 +157,10 @@
 		
 		//+++++++++++++++++++++Numero de registros por mes/Saida++++++++
 		
-		function getGrafNumRegJanSai(){    //Janeiro
+		function getGrafNumRegJanSai($ano){    //Janeiro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('01', '2017'));
+			$query = $this->db->query($sql, array('01', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -169,10 +169,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegFevSai(){    //Fevereiro
+		function getGrafNumRegFevSai($ano){    //Fevereiro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('02', '2017'));
+			$query = $this->db->query($sql, array('02', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -181,10 +181,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegMarSai(){    //Março
+		function getGrafNumRegMarSai($ano){    //Março
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('03', '2017'));
+			$query = $this->db->query($sql, array('03', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -193,10 +193,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegAbrSai(){    //Abril
+		function getGrafNumRegAbrSai($ano){    //Abril
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('04', '2017'));
+			$query = $this->db->query($sql, array('04', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -205,10 +205,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegMaiSai(){    //Maio
+		function getGrafNumRegMaiSai($ano){    //Maio
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('05', '2017'));
+			$query = $this->db->query($sql, array('05', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -217,10 +217,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegJunSai(){    //Junho
+		function getGrafNumRegJunSai($ano){    //Junho
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('06', '2017'));
+			$query = $this->db->query($sql, array('06', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -229,10 +229,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegJulSai(){    //Julho
+		function getGrafNumRegJulSai($ano){    //Julho
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('07', '2017'));
+			$query = $this->db->query($sql, array('07', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -241,10 +241,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegAgoSai(){    //Agosto
+		function getGrafNumRegAgoSai($ano){    //Agosto
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('08', '2017'));
+			$query = $this->db->query($sql, array('08', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -253,10 +253,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegSetSai(){    //Setembro
+		function getGrafNumRegSetSai($ano){    //Setembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('09', '2017'));
+			$query = $this->db->query($sql, array('09', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -265,10 +265,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegOutSai(){    //Outubro
+		function getGrafNumRegOutSai($ano){    //Outubro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('10', '2017'));
+			$query = $this->db->query($sql, array('10', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -277,10 +277,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegNovSai(){    //Novembro
+		function getGrafNumRegNovSai($ano){    //Novembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
 			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('11', '2017'));
+			$query = $this->db->query($sql, array('11', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -289,10 +289,10 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegDezSai(){    //Dezembro
+		function getGrafNumRegDezSai($ano){    //Dezembro
 			//$sql = "select * from equiptb where EXTRACT(MONTH FROM created_at) = ?";
-			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array('12', '2017'));
+			$sql = "select * from equiptb where (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
+			$query = $this->db->query($sql, array('12', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
