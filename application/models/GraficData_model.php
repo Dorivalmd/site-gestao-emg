@@ -396,9 +396,9 @@
 		
 		//++++++++++++++++++++++++++++++++++Numero de registros por mes/cliente data Entrada
 		
-		function getGrafNumRegClientJanEnt($nomeClien){    //Janeiro
+		function getGrafNumRegClientJanEnt($nomeClien, $ano){    //Janeiro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '01', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '01', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -407,9 +407,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientFevEnt($nomeClien){    //Fevereiro
+		function getGrafNumRegClientFevEnt($nomeClien, $ano){    //Fevereiro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '02', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '02', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -418,9 +418,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientMarEnt($nomeClien){    //Março
+		function getGrafNumRegClientMarEnt($nomeClien, $ano){    //Março
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '03', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '03', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -429,9 +429,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientAbrEnt($nomeClien){    //Abril
+		function getGrafNumRegClientAbrEnt($nomeClien, $ano){    //Abril
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '04', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '04', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -440,9 +440,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientMaiEnt($nomeClien){    //Maio
+		function getGrafNumRegClientMaiEnt($nomeClien, $ano){    //Maio
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '05', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '05', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -451,9 +451,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientJunEnt($nomeClien){    //Junho
+		function getGrafNumRegClientJunEnt($nomeClien, $ano){    //Junho
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '06', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '06', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -462,9 +462,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientJulEnt($nomeClien){    //Julho
+		function getGrafNumRegClientJulEnt($nomeClien, $ano){    //Julho
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '07', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '07', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -473,9 +473,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientAgoEnt($nomeClien){    //Agosto
+		function getGrafNumRegClientAgoEnt($nomeClien, $ano){    //Agosto
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '08', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '08', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -484,9 +484,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientSetEnt($nomeClien){    //Setembro
+		function getGrafNumRegClientSetEnt($nomeClien, $ano){    //Setembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '09', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '09', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -495,9 +495,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientOutEnt($nomeClien){    //Outubro
+		function getGrafNumRegClientOutEnt($nomeClien, $ano){    //Outubro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '10', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '10', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -506,9 +506,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientNovEnt($nomeClien){    //Novembro
+		function getGrafNumRegClientNovEnt($nomeClien, $ano){    //Novembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '11', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '11', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -517,9 +517,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientDezEnt($nomeClien){    //Dezembro
+		function getGrafNumRegClientDezEnt($nomeClien, $ano){    //Dezembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_entrada)) = ? AND (EXTRACT(YEAR FROM data_entrada)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '12', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '12', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -530,9 +530,9 @@
 		}
 		//++++++++++++++++++++++++++++++++++Numero de registros por mes/cliente data Saida
 		
-		function getGrafNumRegClientJanSai($nomeClien){    //Janeiro
+		function getGrafNumRegClientJanSai($nomeClien, $ano){    //Janeiro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '01', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '01', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -541,9 +541,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientFevSai($nomeClien){    //Fevereiro
+		function getGrafNumRegClientFevSai($nomeClien, $ano){    //Fevereiro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '02', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '02', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -552,9 +552,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientMarSai($nomeClien){    //Março
+		function getGrafNumRegClientMarSai($nomeClien, $ano){    //Março
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '03', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '03', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -563,9 +563,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientAbrSai($nomeClien){    //Abril
+		function getGrafNumRegClientAbrSai($nomeClien, $ano){    //Abril
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '04', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '04', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -574,9 +574,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientMaiSai($nomeClien){    //Maio
+		function getGrafNumRegClientMaiSai($nomeClien, $ano){    //Maio
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '05', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '05', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -585,9 +585,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientJunSai($nomeClien){    //Junho
+		function getGrafNumRegClientJunSai($nomeClien, $ano){    //Junho
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '06', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '06', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -596,9 +596,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientJulSai($nomeClien){    //Julho
+		function getGrafNumRegClientJulSai($nomeClien, $ano){    //Julho
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '07', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '07', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -607,9 +607,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientAgoSai($nomeClien){    //Agosto
+		function getGrafNumRegClientAgoSai($nomeClien, $ano){    //Agosto
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '08', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '08', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -618,9 +618,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientSetSai($nomeClien){    //Setembro
+		function getGrafNumRegClientSetSai($nomeClien, $ano){    //Setembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '09', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '09', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -629,9 +629,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientOutSai($nomeClien){    //Outubro
+		function getGrafNumRegClientOutSai($nomeClien, $ano){    //Outubro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '10', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '10', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -640,9 +640,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientNovSai($nomeClien){    //Novembro
+		function getGrafNumRegClientNovSai($nomeClien, $ano){    //Novembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '11', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '11', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	
@@ -651,9 +651,9 @@
 				return	false;
 			}
 		}
-		function getGrafNumRegClientDezSai($nomeClien){    //Dezembro
+		function getGrafNumRegClientDezSai($nomeClien, $ano){    //Dezembro
 			$sql = "select * from equiptb where cliente = ? AND (EXTRACT(MONTH FROM data_saida)) = ? AND (EXTRACT(YEAR FROM data_saida)) = ?";
-			$query = $this->db->query($sql, array($nomeClien, '12', '2017'));
+			$query = $this->db->query($sql, array($nomeClien, '12', $ano));
 			$result	= $query->num_rows();
 			if($result){	
 				return $result;	

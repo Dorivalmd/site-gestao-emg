@@ -164,37 +164,61 @@ class GraficosControl extends CI_Controller {
 	{
 		$this->load->view('v_mostrarGraficoClient');
 	}
+
+	public function GraficoBarClient2019(){
+		$ano = "2019";
+		$title = "";
+		$comp = 1160;
+		$larg = 420;
+		$this->GraficoBarTotClient($ano, $title, $comp, $larg);
+		
+	}
+
+	public function GraficoBarClient2018(){
+		$ano = "2018";
+		$title = "";
+		$comp = 1160;
+		$larg = 420;
+		$this->GraficoBarTotClient($ano, $title, $comp, $larg);
+
+	}
+	public function GraficoBarClient2017(){
+		$ano = "2017";
+		$title = "";
+		$comp = 1160;
+		$larg = 420;
+		$this->GraficoBarTotClient($ano, $title, $comp, $larg);
+		
+	}
 	
-	public function GraficoBarTotClient(){
-		
+	public function GraficoBarTotClient($ano, $title, $comp, $larg){
 		$nomeCliente = $this->session->userdata('nome');
-		
 		// Dados de entrada
-		$equipJanEnt = $this->GraficData_model->getGrafNumRegClientJanEnt($nomeCliente); 
-		$equipFevEnt = $this->GraficData_model->getGrafNumRegClientFevEnt($nomeCliente);
-		$equipMarEnt = $this->GraficData_model->getGrafNumRegClientMarEnt($nomeCliente);
-		$equipAbrEnt = $this->GraficData_model->getGrafNumRegClientAbrEnt($nomeCliente);
-		$equipMaiEnt = $this->GraficData_model->getGrafNumRegClientMaiEnt($nomeCliente); 
-		$equipJunEnt = $this->GraficData_model->getGrafNumRegClientJunEnt($nomeCliente);
-		$equipJulEnt = $this->GraficData_model->getGrafNumRegClientJulEnt($nomeCliente);
-		$equipAgoEnt = $this->GraficData_model->getGrafNumRegClientAgoEnt($nomeCliente);
-		$equipSetEnt = $this->GraficData_model->getGrafNumRegClientSetEnt($nomeCliente); 
-		$equipOutEnt = $this->GraficData_model->getGrafNumRegClientOutEnt($nomeCliente);
-		$equipNovEnt = $this->GraficData_model->getGrafNumRegClientNovEnt($nomeCliente);	
-		$equipDezEnt = $this->GraficData_model->getGrafNumRegClientDezEnt($nomeCliente);
+		$equipJanEnt = $this->GraficData_model->getGrafNumRegClientJanEnt($nomeCliente, $ano); 
+		$equipFevEnt = $this->GraficData_model->getGrafNumRegClientFevEnt($nomeCliente, $ano);
+		$equipMarEnt = $this->GraficData_model->getGrafNumRegClientMarEnt($nomeCliente, $ano);
+		$equipAbrEnt = $this->GraficData_model->getGrafNumRegClientAbrEnt($nomeCliente, $ano);
+		$equipMaiEnt = $this->GraficData_model->getGrafNumRegClientMaiEnt($nomeCliente, $ano); 
+		$equipJunEnt = $this->GraficData_model->getGrafNumRegClientJunEnt($nomeCliente, $ano);
+		$equipJulEnt = $this->GraficData_model->getGrafNumRegClientJulEnt($nomeCliente, $ano);
+		$equipAgoEnt = $this->GraficData_model->getGrafNumRegClientAgoEnt($nomeCliente, $ano);
+		$equipSetEnt = $this->GraficData_model->getGrafNumRegClientSetEnt($nomeCliente, $ano); 
+		$equipOutEnt = $this->GraficData_model->getGrafNumRegClientOutEnt($nomeCliente, $ano);
+		$equipNovEnt = $this->GraficData_model->getGrafNumRegClientNovEnt($nomeCliente, $ano);	
+		$equipDezEnt = $this->GraficData_model->getGrafNumRegClientDezEnt($nomeCliente, $ano);
 		// Dados de saida
-		$equipJanSai = $this->GraficData_model->getGrafNumRegClientJanSai($nomeCliente); 
-		$equipFevSai = $this->GraficData_model->getGrafNumRegClientFevSai($nomeCliente);
-		$equipMarSai = $this->GraficData_model->getGrafNumRegClientMarSai($nomeCliente);
-		$equipAbrSai = $this->GraficData_model->getGrafNumRegClientAbrSai($nomeCliente);
-		$equipMaiSai = $this->GraficData_model->getGrafNumRegClientMaiSai($nomeCliente); 
-		$equipJunSai = $this->GraficData_model->getGrafNumRegClientJunSai($nomeCliente);
-		$equipJulSai = $this->GraficData_model->getGrafNumRegClientJulSai($nomeCliente);
-		$equipAgoSai = $this->GraficData_model->getGrafNumRegClientAgoSai($nomeCliente);
-		$equipSetSai = $this->GraficData_model->getGrafNumRegClientSetSai($nomeCliente); 
-		$equipOutSai = $this->GraficData_model->getGrafNumRegClientOutSai($nomeCliente);
-		$equipNovSai = $this->GraficData_model->getGrafNumRegClientNovSai($nomeCliente);	
-		$equipDezSai = $this->GraficData_model->getGrafNumRegClientDezSai($nomeCliente);
+		$equipJanSai = $this->GraficData_model->getGrafNumRegClientJanSai($nomeCliente, $ano); 
+		$equipFevSai = $this->GraficData_model->getGrafNumRegClientFevSai($nomeCliente, $ano);
+		$equipMarSai = $this->GraficData_model->getGrafNumRegClientMarSai($nomeCliente, $ano);
+		$equipAbrSai = $this->GraficData_model->getGrafNumRegClientAbrSai($nomeCliente, $ano);
+		$equipMaiSai = $this->GraficData_model->getGrafNumRegClientMaiSai($nomeCliente, $ano); 
+		$equipJunSai = $this->GraficData_model->getGrafNumRegClientJunSai($nomeCliente, $ano);
+		$equipJulSai = $this->GraficData_model->getGrafNumRegClientJulSai($nomeCliente, $ano);
+		$equipAgoSai = $this->GraficData_model->getGrafNumRegClientAgoSai($nomeCliente, $ano);
+		$equipSetSai = $this->GraficData_model->getGrafNumRegClientSetSai($nomeCliente, $ano); 
+		$equipOutSai = $this->GraficData_model->getGrafNumRegClientOutSai($nomeCliente, $ano);
+		$equipNovSai = $this->GraficData_model->getGrafNumRegClientNovSai($nomeCliente, $ano);	
+		$equipDezSai = $this->GraficData_model->getGrafNumRegClientDezSai($nomeCliente, $ano);
 				
 		$data = array(
 		  array('JAN', $equipJanEnt, $equipJanSai), array('FEV', $equipFevEnt, $equipFevSai),
@@ -205,12 +229,12 @@ class GraficosControl extends CI_Controller {
 		  array('NOV', $equipNovEnt, $equipNovSai), array('DEZ', $equipDezEnt, $equipDezSai),
 		);
 
-		$plot = new CI_PHPlot(860, 420);
+		$plot = new CI_PHPlot($comp, $larg);
 		$plot->SetImageBorderType('plain');
 		$plot->SetPlotType('bars');
 		$plot->SetDataType('text-data');
 		$plot->SetDataValues($data);
-		$plot->SetTitle("NUMERO DE EQUIPAMENTOS POR MES EM 2017");
+		$plot->SetTitle($title);
 		$plot->SetShading(0);
 		$plot->SetDrawDashedGrid(true);
 
